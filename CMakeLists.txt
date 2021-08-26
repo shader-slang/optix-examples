@@ -24,7 +24,6 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/configure_slang.cmake)
 # ------------------------------------------------------------------
 set(OpenGL_GL_PREFERENCE LEGACY)
 if (WIN32)
-#  set(glfw_dir ${PROJECT_SOURCE_DIR}/submodules/glfw/)
   set(glfw_dir ${PROJECT_SOURCE_DIR}/common/3rdParty/glfw/)
   include_directories(${glfw_dir}/include)
   add_subdirectory(${glfw_dir} EXCLUDE_FROM_ALL)
@@ -37,14 +36,6 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE STRING "" FORCE)
 set(GLFW_BUILD_TESTS    OFF CACHE STRING "" FORCE)
 set(GLFW_INSTALL        OFF CACHE STRING "" FORCE)
 add_subdirectory(common/glfWindow EXCLUDE_FROM_ALL)
-
-
-# ------------------------------------------------------------------
-# import gdt submodule
-# ------------------------------------------------------------------
-set(gdt_dir ${PROJECT_SOURCE_DIR}/common/gdt/)
-include_directories(${gdt_dir})
-add_subdirectory(${gdt_dir} EXCLUDE_FROM_ALL)
 
 # ------------------------------------------------------------------
 # and final build rules for the project
